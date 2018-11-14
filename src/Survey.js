@@ -306,7 +306,7 @@ class Survey extends Component {
                     <div className="Survey__FormCenter">
                         <form className="Survey__FormFields" onSubmit={this.handleSubmit}>
                             <div className="Survey__FormField">
-                                <label className="Survey__FormField__Label" htmlFor="name"> Ingrese su nombre completo </label>
+                                <label className="Survey__FormField__Label" htmlFor="name"> 1. Ingrese su nombre completo </label>
                                 <input type="text" id="nombreCompleto" className="Survey__FormField__Input" placeholder="Nombre completo" name="fullname" value={this.state.fullname} onChange={this.handleInputChange}/>
                             </div>
                             <div className="Survey__FormField">
@@ -316,7 +316,7 @@ class Survey extends Component {
                                 <input type="text" id="secondLastName" className="Survey__FormField__Input" placeholder="Segundo apellido" name="secondLastName" value={this.state.secondLastName} onChange={this.handleInputChange}/>  
                             </div>
                             <div className="Survey__FormField">
-                                <label className="Survey__FormField__Label" htmlFor="name"> Indique el genero con el que se identifique </label>
+                                <label className="Survey__FormField__Label" htmlFor="name"> 2. Indique el genero con el que se identifique </label>
                                 <Select className="Survey__FormField__Dropdown"
                                     styles={{menuList: (base) => ({ ...base, color: 'black' })}}
                                     value={genero}
@@ -325,13 +325,13 @@ class Survey extends Component {
                                 />
                             </div>
                             <div className="Survey__FormField">
-                                <label className="Survey__FormField__Label" htmlFor="name"> Si se identifica con el genero Femenino, enuncie cuantos hijos a tenido </label>
+                                <label className="Survey__FormField__Label" htmlFor="name"> 3. Si se identifica con el genero Femenino, enuncie cuantos hijos a tenido </label>
                                 <input type="text" id="hijosVivos" className="Survey__FormField__Input" placeholder="Numero de hijos vivos" name="hijosVivos" value={this.state.hijosVivos} onChange={this.handleInputChange}/>
                                 <div className="Survey__FormField"></div>
                                 <input type="text" id="hijosTotales" className="Survey__FormField__Input" placeholder="Numero total de hijos" name="hijosTotales" value={this.state.hijosTotales} onChange={this.handleInputChange}/>
                             </div>
                             <div className="Survey__FormField">
-                                <label className="Survey__FormField__Label" htmlFor="name"> Indique su pais de nacimiento </label>
+                                <label className="Survey__FormField__Label" htmlFor="name"> 4. Indique su pais de nacimiento </label>
                                 <Select className="Survey__FormField__Dropdown"
                                     styles={{menuList: (base) => ({ ...base, color: 'black' })}}
                                     value={pais}
@@ -340,7 +340,7 @@ class Survey extends Component {
                                 />
                             </div>
                             <div className="Survey__FormField">
-                                <label className="Survey__FormField__Label" htmlFor="name"> Indique su fecha de nacimiento </label>
+                                <label className="Survey__FormField__Label" htmlFor="name"> 5. Indique su fecha de nacimiento </label>
                                 <label className="Survey__FormField__Label1" htmlFor="name"> Dia </label>
                                 <Select className="Survey__FormField__Dropdown"
                                     styles={{menuList: (base) => ({ ...base, color: 'black' })}}
@@ -363,7 +363,7 @@ class Survey extends Component {
                                 <input type="text" id="añoNacimiento" className="Survey__FormField__Input" placeholder="Año Nacimiento" name="añoNacimiento" value={this.state.añoNacimiento} onChange={this.handleInputChange}/>
                             </div>
                             <div className="Survey__FormField">
-                                <label className="Survey__FormField__Label" htmlFor="name"> Indique su estado civil </label>
+                                <label className="Survey__FormField__Label" htmlFor="name"> 6. Indique su estado civil </label>
                                     <Select className="Survey__FormField__Dropdown"
                                         styles={{menuList: (base) => ({ ...base, color: 'black' })}}
                                         value={estadoCivil}
@@ -372,7 +372,7 @@ class Survey extends Component {
                                     />
                             </div>
                             <div className="Survey__FormField">
-                                <label className="Survey__FormField__Label" htmlFor="name"> Indique su direccion actual de vivienda</label>
+                                <label className="Survey__FormField__Label" htmlFor="name"> 7. Indique su direccion actual de vivienda</label>
                                 <label className="Survey__FormField__Label1" htmlFor="name"> Ciudad </label>
                                 <Select className="Survey__FormField__Dropdown"
                                     styles={{menuList: (base) => ({ ...base, color: 'black' })}}
@@ -400,7 +400,7 @@ class Survey extends Component {
                             </div>
 
                             <div className="Survey__FormField">
-                                <label className="Survey__FormField__Label" htmlFor="name"> ¿Cuanto tiempo (en años) ha vivido en la direccion dada anteriormente? </label>
+                                <label className="Survey__FormField__Label" htmlFor="name"> 8. ¿Cuanto tiempo (en años) ha vivido en la direccion dada anteriormente? </label>
                                 <div className="Survey__FormField"></div>
                                 <label className="Survey__FormField__Label1"> Marque aqui si ha sido menos de un año </label>
                                 <input
@@ -416,11 +416,11 @@ class Survey extends Component {
                                 <input type="text" id="añosVividos" className="Survey__FormField__Input" placeholder="Años vividos" name="añosVividos" value={this.state.añosVividos} onChange={this.handleInputChange}/>
                             </div>
                             <div className="Survey__FormField">
-                                <label className="Survey__FormField__Label1"> ¿Cuantas personas viven en el inmueble anteriormente mencionado? </label>
+                                <label className="Survey__FormField__Label"> 9. ¿Cuantas personas viven en el inmueble anteriormente mencionado? </label>
                                 <input type="text" id="personasVivienda" className="Survey__FormField__Input" placeholder="Numero de personas" name="personasVivienda" value={this.state.personasVivienda} onChange={this.handleInputChange}/>
                             </div>
                             <div className="Survey__FormField">
-                                <label className="Survey__FormField__Label" htmlFor="name"> Indique su grupo etnico </label>
+                                <label className="Survey__FormField__Label" htmlFor="name"> 10. Indique su grupo etnico </label>
                                     <Select className="Survey__FormField__Dropdown"
                                         styles={{menuList: (base) => ({ ...base, color: 'black' })}}
                                         value={etnia}
@@ -429,7 +429,7 @@ class Survey extends Component {
                                     />
                             </div>
                             <div className="Survey__FormField">
-                                <label className="Survey__FormField__Label" htmlFor="name"> Indique si tiene algun problema de salud o condicion que le cause algun inpedimento </label>
+                                <label className="Survey__FormField__Label" htmlFor="name"> 11. Indique si tiene algun problema de salud o condicion que le cause algun inpedimento </label>
                                 <div className="Survey__FormField"></div>
                                 <label className="Survey__FormField__Label1"> Marque aqui si es un problema de vision </label>
                                 <input
@@ -496,7 +496,7 @@ class Survey extends Component {
                                 <div className="Survey__FormField"></div>
                             </div>
                             <div className="Survey__FormField">
-                                <label className="Survey__FormField__Label" htmlFor="name"> Indique el grupo religioso al que pertenence </label>
+                                <label className="Survey__FormField__Label" htmlFor="name"> 12. Indique el grupo religioso al que pertenence </label>
                                     <Select className="Survey__FormField__Dropdown"
                                         styles={{menuList: (base) => ({ ...base, color: 'black' })}}
                                         value={religion}
