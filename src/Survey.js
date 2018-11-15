@@ -69,7 +69,7 @@ const meses = [
     { value: 'transversal', label: 'Transversal' }
   ];
 
-  const cuidades = [
+  const ciudades = [
     { value: 'zona01', label: 'Barbarosa' },
     { value: 'zona02', label: 'Girardotota' },
     { value: 'zona03', label: 'Cpacabaniando' },
@@ -118,6 +118,47 @@ const meses = [
     { value: 'unionLibre', label: 'Union Libre' }
   ];
 
+  const nivelesAcademicos = [
+    { value: 'primaria', label: 'Pimaria' },
+    { value: 'bachillerato', label: 'Bachillerato' },
+    { value: 'universitario', label: 'Universitario' },
+    { value: 'tecnico', label: 'Tecnica o Tecnologia' },
+    { value: 'noTiene', label: 'No tiene ningun nivel academico' }
+  ];
+
+  const situacionesEOT = [
+    { value: 'estudia', label: 'Estudia' },
+    { value: 'trabaja', label: 'Trabaja' },
+    { value: 'ambas', label: 'Ambas' },
+    { value: 'ninguna', label: 'Ninguna' }
+  ];
+
+  const ingresosMensuales = [
+    { value: '0', label: '0 $' },
+    { value: '0y1', label: 'Entre 0 $ y 1000000 $' },
+    { value: '1y2', label: 'Entre 1000000 $ y 2000000 $' },
+    { value: '2y3', label: 'Entre 2000000 $ y 3000000 $' },
+    { value: '3y4', label: 'Entre 3000000 $ y 4000000 $' },
+    { value: '4y5', label: 'Entre 4000000 $ y 5000000 $' },
+    { value: '6omas', label: '6000000 $ o mas' }
+  ];
+
+  const situacionesLaborales = [
+    { value: 'empleado', label: 'Empleado' },
+    { value: 'independiente', label: 'Trabaja en su propio negocio' },
+    { value: 'sinpaga', label: 'Trabaja sin paga directamente' }
+  ];
+
+  const horasLaborales = [
+    { value: '0', label: '0 horas a la semana' },
+    { value: '0y10', label: 'Entre 0 y 10 horas a la semana' },
+    { value: '10y20', label: 'Entre 10 y 20 horas a la semana' },
+    { value: '20y30', label: 'Entre 20 y 30 horas a la semana' },
+    { value: '30y40', label: 'Entre 30 y 40 horas a la semana' },
+    { value: '40y50', label: 'Entre 40 y 50 horas a la semana' },
+    { value: '60omas', label: '60 horas a la semana  o mas' }
+  ];
+
 class Survey extends Component {
     constructor(props){
         super(props)
@@ -133,6 +174,9 @@ class Survey extends Component {
             hijosVivos:'',
             hijosTotales:'',
             personasVivienda:'',
+            nombreEmpresa: '',
+            numeroCelular: '',
+            numeroEdad:'',
             hasAgreed: false,
             problemasAprendizaje: false,
             problemasCaminar: false,
@@ -145,11 +189,16 @@ class Survey extends Component {
             dia: null,
             mes: null,
             direccion: null,
-            cuidad: null,
+            ciudad: null,
             pais: null,
             etnia: null,
             religion: null,
             estadoCivil: null,
+            nivelAcademico: null,
+            situacionEOT: null,
+            ingresosMensual: null,
+            situacionLaboral: null,
+            horasLaboral: null
         }
       }
       handleSubmit = (event) => {
@@ -253,6 +302,11 @@ class Survey extends Component {
         console.log(`mes:`, mes);
       }
 
+      handleChangeCiudad = (ciudad) => {
+        this.setState({ ciudad });
+        console.log(`ingresos mensuales:`, ciudad);
+      }
+
       handleChangeDireccion = (direccion) => {
         this.setState({ direccion });
         console.log(`direccion:`, direccion);
@@ -277,13 +331,38 @@ class Survey extends Component {
         this.setState({ estadoCivil });
         console.log(`estado civil:`, estadoCivil);
       }
+
+      handleChangeNivelAcademico = (nivelAcademico) => {
+        this.setState({ nivelAcademico });
+        console.log(`nivel academico:`, nivelAcademico);
+      }
+
+      handleChangeSituacionEOT = (situacionEOT) => {
+        this.setState({ situacionEOT });
+        console.log(`sitaucion EOT:`, situacionEOT);
+      }
+
+      handleChangeIngresosMensual = (ingresosMensual) => {
+        this.setState({ ingresosMensual });
+        console.log(`ingresos mensuales:`, ingresosMensual);
+      }
+
+      handleChangeSituacionLaboral = (situacionLaboral) => {
+        this.setState({ situacionLaboral });
+        console.log(`ingresos mensuales:`, situacionLaboral);
+      }
+
+      handleChangeHorasLaboral = (horasLaboral) => {
+        this.setState({ horasLaboral });
+        console.log(`ingresos mensuales:`, horasLaboral);
+      }
       
     render(){
         const { genero } = this.state;
         const { dia } = this.state;
         const { mes } = this.state;
         const { direccion } = this.state;
-        const { cuidad } = this.state;
+        const { ciudad } = this.state;
         const { label } = this.props;
         const { hasAgreed } = this.state;
         const { pais } = this.state;
@@ -297,12 +376,18 @@ class Survey extends Component {
         const { noProblemas } = this.state;
         const { religion } = this.state;
         const { estadoCivil } = this.state;
+        const { nivelAcademico } = this.state;
+        const { situacionEOT } = this.state;
+        const { ingresosMensual } = this.state;
+        const { situacionLaboral } = this.state;
+        const { horasLaboral } = this.state;
         
         return(
             <div className="Survey">
                 <div className="Survey__Aside"> </div>
                 <div className="Survey__Form">
-                    <div className="Survey__FormTitle">Encuesta censo de Bolumbia</div>
+                    <div className="Survey__FormTitle">Encuesta censo de Bolumbia, permitase responder las siguientes preguntas a conciencia</div>
+                    <div></div>
                     <div className="Survey__FormCenter">
                         <form className="Survey__FormFields" onSubmit={this.handleSubmit}>
                             <div className="Survey__FormField">
@@ -325,10 +410,8 @@ class Survey extends Component {
                                 />
                             </div>
                             <div className="Survey__FormField">
-                                <label className="Survey__FormField__Label" htmlFor="name"> 3. Si se identifica con el genero Femenino, enuncie cuantos hijos a tenido </label>
-                                <input type="text" id="hijosVivos" className="Survey__FormField__Input" placeholder="Numero de hijos vivos" name="hijosVivos" value={this.state.hijosVivos} onChange={this.handleInputChange}/>
-                                <div className="Survey__FormField"></div>
-                                <input type="text" id="hijosTotales" className="Survey__FormField__Input" placeholder="Numero total de hijos" name="hijosTotales" value={this.state.hijosTotales} onChange={this.handleInputChange}/>
+                                <label className="Survey__FormField__Label"> 3. Indique su edad (en años cumplidos) </label>
+                                <input type="text" id="numeroEdad" className="Survey__FormField__Input" placeholder="Indique su edad" name="numeroEdad" value={this.state.numeroEdad} onChange={this.handleInputChange}/>
                             </div>
                             <div className="Survey__FormField">
                                 <label className="Survey__FormField__Label" htmlFor="name"> 4. Indique su pais de nacimiento </label>
@@ -359,7 +442,7 @@ class Survey extends Component {
                                 />
                             </div>
                             <div className="Survey__FormField">
-                                <label className="Survey__FormField__Label1" htmlFor="name"> Año  (Indiquelo con 4 cifras) </label>
+                                <label className="Survey__FormField__Label1" htmlFor="name"> Año  (Indiquelo con 4 digitos) </label>
                                 <input type="text" id="añoNacimiento" className="Survey__FormField__Input" placeholder="Año Nacimiento" name="añoNacimiento" value={this.state.añoNacimiento} onChange={this.handleInputChange}/>
                             </div>
                             <div className="Survey__FormField">
@@ -372,13 +455,19 @@ class Survey extends Component {
                                     />
                             </div>
                             <div className="Survey__FormField">
-                                <label className="Survey__FormField__Label" htmlFor="name"> 7. Indique su direccion actual de vivienda</label>
+                                <label className="Survey__FormField__Label" htmlFor="name"> 7. Si se identifica con el genero Femenino, enuncie cuantos embarazos ha tenido </label>
+                                <input type="text" id="hijosVivos" className="Survey__FormField__Input" placeholder="Numero de hijos vivos" name="hijosVivos" value={this.state.hijosVivos} onChange={this.handleInputChange}/>
+                                <div className="Survey__FormField"></div>
+                                <input type="text" id="hijosTotales" className="Survey__FormField__Input" placeholder="Numero total de hijos" name="hijosTotales" value={this.state.hijosTotales} onChange={this.handleInputChange}/>
+                            </div>
+                            <div className="Survey__FormField">
+                                <label className="Survey__FormField__Label" htmlFor="name"> 8. Indique su direccion actual de vivienda</label>
                                 <label className="Survey__FormField__Label1" htmlFor="name"> Ciudad </label>
                                 <Select className="Survey__FormField__Dropdown"
                                     styles={{menuList: (base) => ({ ...base, color: 'black' })}}
-                                    value={cuidad}
-                                    onChange={this.handleChangeDireccion}
-                                    options={cuidades}
+                                    value={ciudad}
+                                    onChange={this.handleChangeCiudad}
+                                    options={ciudades}
                                 />
                                 
                             </div>
@@ -400,7 +489,12 @@ class Survey extends Component {
                             </div>
 
                             <div className="Survey__FormField">
-                                <label className="Survey__FormField__Label" htmlFor="name"> 8. ¿Cuanto tiempo (en años) ha vivido en la direccion dada anteriormente? </label>
+                                <label className="Survey__FormField__Label"> 9. Indique su numero de celular (recuerde que son 10 digitos)</label>
+                                <input type="text" id="numeroCelular" className="Survey__FormField__Input" placeholder="Numero de celular" name="numeroCelular" value={this.state.numeroCelular} onChange={this.handleInputChange}/>
+                            </div>
+
+                            <div className="Survey__FormField">
+                                <label className="Survey__FormField__Label" htmlFor="name"> 10. ¿Cuanto tiempo (en años) ha vivido en la direccion dada anteriormente? </label>
                                 <div className="Survey__FormField"></div>
                                 <label className="Survey__FormField__Label1"> Marque aqui si ha sido menos de un año </label>
                                 <input
@@ -416,11 +510,11 @@ class Survey extends Component {
                                 <input type="text" id="añosVividos" className="Survey__FormField__Input" placeholder="Años vividos" name="añosVividos" value={this.state.añosVividos} onChange={this.handleInputChange}/>
                             </div>
                             <div className="Survey__FormField">
-                                <label className="Survey__FormField__Label"> 9. ¿Cuantas personas viven en el inmueble anteriormente mencionado? </label>
+                                <label className="Survey__FormField__Label"> 11. ¿Cuantas personas viven en el inmueble anteriormente mencionado? </label>
                                 <input type="text" id="personasVivienda" className="Survey__FormField__Input" placeholder="Numero de personas" name="personasVivienda" value={this.state.personasVivienda} onChange={this.handleInputChange}/>
                             </div>
                             <div className="Survey__FormField">
-                                <label className="Survey__FormField__Label" htmlFor="name"> 10. Indique su grupo etnico </label>
+                                <label className="Survey__FormField__Label" htmlFor="name"> 12. Indique su grupo etnico </label>
                                     <Select className="Survey__FormField__Dropdown"
                                         styles={{menuList: (base) => ({ ...base, color: 'black' })}}
                                         value={etnia}
@@ -429,7 +523,7 @@ class Survey extends Component {
                                     />
                             </div>
                             <div className="Survey__FormField">
-                                <label className="Survey__FormField__Label" htmlFor="name"> 11. Indique si tiene algun problema de salud o condicion que le cause algun inpedimento </label>
+                                <label className="Survey__FormField__Label" htmlFor="name"> 13. Indique si tiene algun problema de salud o condicion que le cause algun inpedimento </label>
                                 <div className="Survey__FormField"></div>
                                 <label className="Survey__FormField__Label1"> Marque aqui si es un problema de vision </label>
                                 <input
@@ -486,17 +580,17 @@ class Survey extends Component {
                                 />
                                 <div className="Survey__FormField"></div>
                                 <label className="Survey__FormField__Label1"> Marque aqui si no tiene problema de salud o condicion que le cause algun inpedimento </label>
-                                <input
-                                    className="Survey__FormField__Checkbox"
-                                    type="checkbox"
-                                    value={label}
-                                    checked={noProblemas}
-                                    onChange={this.toggleCheckboxChange}
-                                />
+                                    <input
+                                        className="Survey__FormField__Checkbox"
+                                        type="checkbox"
+                                        value={label}
+                                        checked={noProblemas}
+                                        onChange={this.toggleCheckboxChange}
+                                    />
                                 <div className="Survey__FormField"></div>
                             </div>
                             <div className="Survey__FormField">
-                                <label className="Survey__FormField__Label" htmlFor="name"> 12. Indique el grupo religioso al que pertenence </label>
+                                <label className="Survey__FormField__Label" htmlFor="name"> 14. Indique el grupo religioso al que pertenence </label>
                                     <Select className="Survey__FormField__Dropdown"
                                         styles={{menuList: (base) => ({ ...base, color: 'black' })}}
                                         value={religion}
@@ -504,7 +598,56 @@ class Survey extends Component {
                                         options={religiones}
                                     />
                             </div>
-
+                            <div className="Survey__FormField">
+                                <label className="Survey__FormField__Label" htmlFor="name"> 15. Indique su nivel academico </label>
+                                        <Select className="Survey__FormField__Dropdown"
+                                            styles={{menuList: (base) => ({ ...base, color: 'black' })}}
+                                            value={nivelAcademico}
+                                            onChange={this.handleChangeNivelAcademico}
+                                            options={nivelesAcademicos}
+                                        />
+                            </div>
+                            <div className="Survey__FormField">
+                                <label className="Survey__FormField__Label" htmlFor="name"> 16. ¿Esta en este momento estudiando o trabaja o ambas? </label>
+                                        <Select className="Survey__FormField__Dropdown"
+                                            styles={{menuList: (base) => ({ ...base, color: 'black' })}}
+                                            value={situacionEOT}
+                                            onChange={this.handleChangeSituacionEOT}
+                                            options={situacionesEOT}
+                                        />
+                            </div>
+                            <div className="Survey__FormField">
+                                <label className="Survey__FormField__Label" htmlFor="name"> 17. Aproximadamente ¿De cuanto son sus ingresos mensuales? </label>
+                                        <Select className="Survey__FormField__Dropdown"
+                                            styles={{menuList: (base) => ({ ...base, color: 'black' })}}
+                                            value={ingresosMensual}
+                                            onChange={this.handleChangeIngresosMensual}
+                                            options={ingresosMensuales}
+                                        />
+                            </div>
+                            <div className="Survey__FormField">
+                                <label className="Survey__FormField__Label" htmlFor="name"> 18. Si anteriormente respondio que trabaja ¿Cual es su situacion laboral? </label>
+                                        <Select className="Survey__FormField__Dropdown"
+                                            styles={{menuList: (base) => ({ ...base, color: 'black' })}}
+                                            value={situacionLaboral}
+                                            onChange={this.handleChangeSituacionLaboral}
+                                            options={situacionesLaborales}
+                                        />
+                            </div>
+                            <div className="Survey__FormField">
+                                <label className="Survey__FormField__Label"> 19. Si anteriormente respondio que trabaja, indique el nombre de la empresa en la que trabaja </label>
+                                <input type="text" id="nombreEmpresa" className="Survey__FormField__Input" placeholder="Nombre de la empresa" name="nombreEmpresa" value={this.state.nombreEmpresa} onChange={this.handleInputChange}/>
+                            </div>
+                            <div className="Survey__FormField">
+                                <label className="Survey__FormField__Label" htmlFor="name"> 20. Si anteriormente respondio que trabaja, indique cuantas horas trabaja a la semana </label>
+                                        <Select className="Survey__FormField__Dropdown"
+                                            styles={{menuList: (base) => ({ ...base, color: 'black' })}}
+                                            value={horasLaboral}
+                                            onChange={this.handleChangeHorasLaboral}
+                                            options={horasLaborales}
+                                        />
+                            </div>
+                            <div className="Survey__FormTitle">Recuerde revisar sus respuestas antes de enviar la encuesta, muchas gracias!!!!</div>
                             <div className="Survey__FormField">
                                 <button className="Survey__FormField__Button" onClick={this.handleSubmit}>Enviar</button>
                             </div>
