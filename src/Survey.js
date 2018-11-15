@@ -3,160 +3,160 @@ import Select from 'react-select';
 import './Survey.css';
 
 const generos = [
-    { value: 'masculino', label: 'Masculino' },
-    { value: 'femenino', label: 'Femenino' },
-    { value: 'mujerTransgenero', label: 'Mujer Transgenero' },
-    { value: 'hombreTransgenero', label: 'Hombre Transgenero' }
+    { label: 'Masculino' },
+    { label: 'Femenino' },
+    { label: 'Mujer Transgenero' },
+    { label: 'Hombre Transgenero' }
   ];
 const dias = [
-    { value: '1', label: '1' },
-    { value: '2', label: '2' },
-    { value: '3', label: '3' },
-    { value: '4', label: '4' },
-    { value: '5', label: '5' },
-    { value: '6', label: '6' },
-    { value: '7', label: '7' },
-    { value: '8', label: '8' },
-    { value: '9', label: '9' },
-    { value: '10', label: '10' },
-    { value: '11', label: '11' },
-    { value: '12', label: '12' },
-    { value: '13', label: '13' },
-    { value: '14', label: '14' },
-    { value: '15', label: '15' },
-    { value: '16', label: '16' },
-    { value: '17', label: '17' },
-    { value: '18', label: '18' },
-    { value: '19', label: '19' },
-    { value: '20', label: '20' },
-    { value: '21', label: '21' },
-    { value: '22', label: '22' },
-    { value: '23', label: '23' },
-    { value: '24', label: '24' },
-    { value: '25', label: '25' },
-    { value: '26', label: '26' },
-    { value: '27', label: '27' },
-    { value: '28', label: '28' },
-    { value: '29', label: '29' },
-    { value: '30', label: '30' },
-    { value: '31', label: '31' }
+    { label: '1' },
+    { label: '2' },
+    { label: '3' },
+    { label: '4' },
+    { label: '5' },
+    { label: '6' },
+    { label: '7' },
+    { label: '8' },
+    { label: '9' },
+    { label: '10' },
+    { label: '11' },
+    { label: '12' },
+    { label: '13' },
+    { label: '14' },
+    { label: '15' },
+    { label: '16' },
+    { label: '17' },
+    { label: '18' },
+    { label: '19' },
+    { label: '20' },
+    { label: '21' },
+    { label: '22' },
+    { label: '23' },
+    { label: '24' },
+    { label: '25' },
+    { label: '26' },
+    { label: '27' },
+    { label: '28' },
+    { label: '29' },
+    { label: '30' },
+    { label: '31' }
 ];
 const meses = [
-    { value: '01', label: 'Enero' },
-    { value: '02', label: 'Febrero' },
-    { value: '03', label: 'Marzo' },
-    { value: '04', label: 'Abril' },
-    { value: '05', label: 'Mayo' },
-    { value: '06', label: 'Junio' },
-    { value: '07', label: 'Julio' },
-    { value: '08', label: 'Agosto' },
-    { value: '09', label: 'Septiembre' },
-    { value: '10', label: 'Octubre' },
-    { value: '11', label: 'Noviembre' },
-    { value: '12', label: 'Diciembre' }
+    { label: 'Enero' },
+    { label: 'Febrero' },
+    { label: 'Marzo' },
+    { label: 'Abril' },
+    { label: 'Mayo' },
+    { label: 'Junio' },
+    { label: 'Julio' },
+    { label: 'Agosto' },
+    { label: 'Septiembre' },
+    { label: 'Octubre' },
+    { label: 'Noviembre' },
+    { label: 'Diciembre' }
   ];
 
   const direcciones = [
-    { value: 'anillo', label: 'Anillo' },
-    { value: 'autopista', label: 'Autopista' },
-    { value: 'avenida', label: 'Avenida' },
-    { value: 'avenidaCalle', label: 'Avenida Calle' },
-    { value: 'avenidaCarrera', label: 'Avenida Carrera' },
-    { value: 'calle', label: 'Calle' },
-    { value: 'carrera', label: 'Carrera' },
-    { value: 'circular', label: 'Circular' },
-    { value: 'diagonal', label: 'Diagonal' },
-    { value: 'transversal', label: 'Transversal' }
+    { label: 'Anillo' },
+    { label: 'Autopista' },
+    { label: 'Avenida' },
+    { label: 'Avenida Calle' },
+    { label: 'Avenida Carrera' },
+    { label: 'Calle' },
+    { label: 'Carrera' },
+    { label: 'Circular' },
+    { label: 'Diagonal' },
+    { label: 'Transversal' }
   ];
 
   const ciudades = [
-    { value: 'zona01', label: 'Barbarosa' },
-    { value: 'zona02', label: 'Girardotota' },
-    { value: 'zona03', label: 'Cpacabaniando' },
-    { value: 'zona04', label: 'Bellisimo' },
-    { value: 'zona05', label: 'Medelin' },
-    { value: 'zona06', label: 'Envihermoso' },
-    { value: 'zona07', label: 'Itagi' },
-    { value: 'zona08', label: 'Sabana' },
-    { value: 'zona09', label: 'Caldero' },
-    { value: 'zona10', label: 'La Luna' }
+    { label: 'Barbarosa' },
+    { label: 'Girardotota' },
+    { label: 'Cpacabaniando' },
+    { label: 'Bellisimo' },
+    { label: 'Medelin' },
+    { label: 'Envihermoso' },
+    { label: 'Itagi' },
+    { label: 'Sabana' },
+    { label: 'Caldero' },
+    { label: 'La Luna' }
   ];
 
   const paises = [
-    { value: 'tibercuador', label: 'Tibercuador' },
-    { value: 'bolumbia', label: 'Bolumbia' },
-    { value: 'valenzuela', label: 'Valenzuela' },
-    { value: 'brezil', label: 'Brezil' },
-    { value: 'paru', label: 'Paru' },
-    { value: 'chale', label: 'Chale' },
-    { value: 'anglertina', label: 'Anglertina' }
+    { label: 'Tibercuador' },
+    { label: 'Bolumbia' },
+    { label: 'Valenzuela' },
+    { label: 'Brezil' },
+    { label: 'Paru' },
+    { label: 'Chale' },
+    { label: 'Anglertina' }
   ];
 
   const etnias = [
-    { value: 'blancos', label: 'Blancos' },
-    { value: 'indigenas', label: 'Indigenas' },
-    { value: 'afrodecendientes', label: 'Afrodecendientes' },
-    { value: 'raizales', label: 'Raizales' },
-    { value: 'rom', label: 'Rom' }
+    { label: 'Blancos' },
+    { label: 'Indigenas' },
+    { label: 'Afrodecendientes' },
+    { label: 'Raizales' },
+    { label: 'Rom' }
   ];
 
   const religiones = [
-    { value: 'catolica', label: 'Catolica' },
-    { value: 'cristiana', label: 'Cristinana' },
-    { value: 'judia', label: 'Judia' },
-    { value: 'musulmana', label: 'Musulmana' },
-    { value: 'protestante', label: 'Protestante' },
-    { value: 'ateo', label: 'Ateo' },
-    { value: 'noPractica', label: 'No Practica' }
+    { label: 'Catolica' },
+    { label: 'Cristinana' },
+    { label: 'Judia' },
+    { label: 'Musulmana' },
+    { label: 'Protestante' },
+    { label: 'Ateo' },
+    { label: 'No Practica' }
   ];
 
   const estadosCiviles = [
-    { value: 'soltero', label: 'Soltero' },
-    { value: 'casado', label: 'Casado' },
-    { value: 'divorciado', label: 'Separado o Divorciado' },
-    { value: 'viudo', label: 'Viudo' },
-    { value: 'unionLibre', label: 'Union Libre' }
+    { label: 'Soltero' },
+    { label: 'Casado' },
+    { label: 'Separado o Divorciado' },
+    { label: 'Viudo' },
+    { label: 'Union Libre' }
   ];
 
   const nivelesAcademicos = [
-    { value: 'primaria', label: 'Pimaria' },
-    { value: 'bachillerato', label: 'Bachillerato' },
-    { value: 'universitario', label: 'Universitario' },
-    { value: 'tecnico', label: 'Tecnica o Tecnologia' },
-    { value: 'noTiene', label: 'No tiene ningun nivel academico' }
+    { label: 'Pimaria' },
+    { label: 'Bachillerato' },
+    { label: 'Universitario' },
+    { label: 'Tecnica o Tecnologia' },
+    { label: 'No tiene ningun nivel academico' }
   ];
 
   const situacionesEOT = [
-    { value: 'estudia', label: 'Estudia' },
-    { value: 'trabaja', label: 'Trabaja' },
-    { value: 'ambas', label: 'Ambas' },
-    { value: 'ninguna', label: 'Ninguna' }
+    { label: 'Estudia' },
+    { label: 'Trabaja' },
+    { label: 'Ambas' },
+    { label: 'Ninguna' }
   ];
 
   const ingresosMensuales = [
-    { value: '0', label: '0 $' },
-    { value: '0y1', label: 'Entre 0 $ y 1000000 $' },
-    { value: '1y2', label: 'Entre 1000000 $ y 2000000 $' },
-    { value: '2y3', label: 'Entre 2000000 $ y 3000000 $' },
-    { value: '3y4', label: 'Entre 3000000 $ y 4000000 $' },
-    { value: '4y5', label: 'Entre 4000000 $ y 5000000 $' },
-    { value: '6omas', label: '6000000 $ o mas' }
+    { label: '0 $' },
+    { label: 'Entre 0 $ y 1000000 $' },
+    { label: 'Entre 1000000 $ y 2000000 $' },
+    { label: 'Entre 2000000 $ y 3000000 $' },
+    { label: 'Entre 3000000 $ y 4000000 $' },
+    { label: 'Entre 4000000 $ y 5000000 $' },
+    { label: '6000000 $ o mas' }
   ];
 
   const situacionesLaborales = [
-    { value: 'empleado', label: 'Empleado' },
-    { value: 'independiente', label: 'Trabaja en su propio negocio' },
-    { value: 'sinpaga', label: 'Trabaja sin paga directamente' }
+    { label: 'Empleado' },
+    { label: 'Trabaja en su propio negocio' },
+    { label: 'Trabaja sin paga directamente' }
   ];
 
   const horasLaborales = [
-    { value: '0', label: '0 horas a la semana' },
-    { value: '0y10', label: 'Entre 0 y 10 horas a la semana' },
-    { value: '10y20', label: 'Entre 10 y 20 horas a la semana' },
-    { value: '20y30', label: 'Entre 20 y 30 horas a la semana' },
-    { value: '30y40', label: 'Entre 30 y 40 horas a la semana' },
-    { value: '40y50', label: 'Entre 40 y 50 horas a la semana' },
-    { value: '60omas', label: '60 horas a la semana  o mas' }
+    { label: '0 horas a la semana' },
+    { label: 'Entre 0 y 10 horas a la semana' },
+    { label: 'Entre 10 y 20 horas a la semana' },
+    { label: 'Entre 20 y 30 horas a la semana' },
+    { label: 'Entre 30 y 40 horas a la semana' },
+    { label: 'Entre 40 y 50 horas a la semana' },
+    { label: '60 horas a la semana  o mas' }
   ];
 
 class Survey extends Component {
@@ -590,7 +590,7 @@ class Survey extends Component {
                                 <div className="Survey__FormField"></div>
                             </div>
                             <div className="Survey__FormField">
-                                <label className="Survey__FormField__Label" htmlFor="name"> 14. Indique el grupo religioso al que pertenence </label>
+                                <label className="Survey__FormField__Label" htmlFor="name"> 14. Indique su religion practicante </label>
                                     <Select className="Survey__FormField__Dropdown"
                                         styles={{menuList: (base) => ({ ...base, color: 'black' })}}
                                         value={religion}
