@@ -3,160 +3,160 @@ import Select from 'react-select';
 import './Survey.css';
 
 const generos = [
-    { label: 'Masculino' },
-    { label: 'Femenino' },
-    { label: 'Mujer Transgenero' },
-    { label: 'Hombre Transgenero' }
+    { value: 'masculino', label: 'Masculino' },
+    { value: 'femenino', label: 'Femenino' },
+    { value: 'mujerTransgenero', label: 'Mujer Transgenero' },
+    { value: 'hombreTransgenero', label: 'Hombre Transgenero' }
   ];
 const dias = [
-    { label: '1' },
-    { label: '2' },
-    { label: '3' },
-    { label: '4' },
-    { label: '5' },
-    { label: '6' },
-    { label: '7' },
-    { label: '8' },
-    { label: '9' },
-    { label: '10' },
-    { label: '11' },
-    { label: '12' },
-    { label: '13' },
-    { label: '14' },
-    { label: '15' },
-    { label: '16' },
-    { label: '17' },
-    { label: '18' },
-    { label: '19' },
-    { label: '20' },
-    { label: '21' },
-    { label: '22' },
-    { label: '23' },
-    { label: '24' },
-    { label: '25' },
-    { label: '26' },
-    { label: '27' },
-    { label: '28' },
-    { label: '29' },
-    { label: '30' },
-    { label: '31' }
+    { value: '1', label: '1' },
+    { value: '2', label: '2' },
+    { value: '3', label: '3' },
+    { value: '4', label: '4' },
+    { value: '5', label: '5' },
+    { value: '6', label: '6' },
+    { value: '7', label: '7' },
+    { value: '8', label: '8' },
+    { value: '9', label: '9' },
+    { value: '10', label: '10' },
+    { value: '11', label: '11' },
+    { value: '12', label: '12' },
+    { value: '13', label: '13' },
+    { value: '14', label: '14' },
+    { value: '15', label: '15' },
+    { value: '16', label: '16' },
+    { value: '17', label: '17' },
+    { value: '18', label: '18' },
+    { value: '19', label: '19' },
+    { value: '20', label: '20' },
+    { value: '21', label: '21' },
+    { value: '22', label: '22' },
+    { value: '23', label: '23' },
+    { value: '24', label: '24' },
+    { value: '25', label: '25' },
+    { value: '26', label: '26' },
+    { value: '27', label: '27' },
+    { value: '28', label: '28' },
+    { value: '29', label: '29' },
+    { value: '30', label: '30' },
+    { value: '31', label: '31' }
 ];
 const meses = [
-    { label: 'Enero' },
-    { label: 'Febrero' },
-    { label: 'Marzo' },
-    { label: 'Abril' },
-    { label: 'Mayo' },
-    { label: 'Junio' },
-    { label: 'Julio' },
-    { label: 'Agosto' },
-    { label: 'Septiembre' },
-    { label: 'Octubre' },
-    { label: 'Noviembre' },
-    { label: 'Diciembre' }
+    { value: '01', label: 'Enero' },
+    { value: '02', label: 'Febrero' },
+    { value: '03', label: 'Marzo' },
+    { value: '04', label: 'Abril' },
+    { value: '05', label: 'Mayo' },
+    { value: '06', label: 'Junio' },
+    { value: '07', label: 'Julio' },
+    { value: '08', label: 'Agosto' },
+    { value: '09', label: 'Septiembre' },
+    { value: '10', label: 'Octubre' },
+    { value: '11', label: 'Noviembre' },
+    { value: '12', label: 'Diciembre' }
   ];
 
   const direcciones = [
-    { label: 'Anillo' },
-    { label: 'Autopista' },
-    { label: 'Avenida' },
-    { label: 'Avenida Calle' },
-    { label: 'Avenida Carrera' },
-    { label: 'Calle' },
-    { label: 'Carrera' },
-    { label: 'Circular' },
-    { label: 'Diagonal' },
-    { label: 'Transversal' }
+    { value: 'anillo', label: 'Anillo' },
+    { value: 'autopista', label: 'Autopista' },
+    { value: 'avenida', label: 'Avenida' },
+    { value: 'avenidaCalle', label: 'Avenida Calle' },
+    { value: 'avenidaCarrera', label: 'Avenida Carrera' },
+    { value: 'calle', label: 'Calle' },
+    { value: 'carrera', label: 'Carrera' },
+    { value: 'circular', label: 'Circular' },
+    { value: 'diagonal', label: 'Diagonal' },
+    { value: 'transversal', label: 'Transversal' }
   ];
 
   const ciudades = [
-    { label: 'Barbarosa' },
-    { label: 'Girardotota' },
-    { label: 'Cpacabaniando' },
-    { label: 'Bellisimo' },
-    { label: 'Medelin' },
-    { label: 'Envihermoso' },
-    { label: 'Itagi' },
-    { label: 'Sabana' },
-    { label: 'Caldero' },
-    { label: 'La Luna' }
+    { value: 'zona01', label: 'Barbarosa' },
+    { value: 'zona02', label: 'Girardotota' },
+    { value: 'zona03', label: 'Cpacabaniando' },
+    { value: 'zona04', label: 'Bellisimo' },
+    { value: 'zona05', label: 'Medelin' },
+    { value: 'zona06', label: 'Envihermoso' },
+    { value: 'zona07', label: 'Itagi' },
+    { value: 'zona08', label: 'Sabana' },
+    { value: 'zona09', label: 'Caldero' },
+    { value: 'zona10', label: 'La Luna' }
   ];
 
   const paises = [
-    { label: 'Tibercuador' },
-    { label: 'Bolumbia' },
-    { label: 'Valenzuela' },
-    { label: 'Brezil' },
-    { label: 'Paru' },
-    { label: 'Chale' },
-    { label: 'Anglertina' }
+    { value: 'tibercuador', label: 'Tibercuador' },
+    { value: 'bolumbia', label: 'Bolumbia' },
+    { value: 'valenzuela', label: 'Valenzuela' },
+    { value: 'brezil', label: 'Brezil' },
+    { value: 'paru', label: 'Paru' },
+    { value: 'chale', label: 'Chale' },
+    { value: 'anglertina', label: 'Anglertina' }
   ];
 
   const etnias = [
-    { label: 'Blancos' },
-    { label: 'Indigenas' },
-    { label: 'Afrodecendientes' },
-    { label: 'Raizales' },
-    { label: 'Rom' }
+    { value: 'blancos', label: 'Blancos' },
+    { value: 'indigenas', label: 'Indigenas' },
+    { value: 'afrodecendientes', label: 'Afrodecendientes' },
+    { value: 'raizales', label: 'Raizales' },
+    { value: 'rom', label: 'Rom' }
   ];
 
   const religiones = [
-    { label: 'Catolica' },
-    { label: 'Cristinana' },
-    { label: 'Judia' },
-    { label: 'Musulmana' },
-    { label: 'Protestante' },
-    { label: 'Ateo' },
-    { label: 'No Practica' }
+    { value: 'catolica', label: 'Catolica' },
+    { value: 'cristiana', label: 'Cristinana' },
+    { value: 'judia', label: 'Judia' },
+    { value: 'musulmana', label: 'Musulmana' },
+    { value: 'protestante', label: 'Protestante' },
+    { value: 'ateo', label: 'Ateo' },
+    { value: 'noPractica', label: 'No Practica' }
   ];
 
   const estadosCiviles = [
-    { label: 'Soltero' },
-    { label: 'Casado' },
-    { label: 'Separado o Divorciado' },
-    { label: 'Viudo' },
-    { label: 'Union Libre' }
+    { value: 'soltero', label: 'Soltero' },
+    { value: 'casado', label: 'Casado' },
+    { value: 'divorciado', label: 'Separado o Divorciado' },
+    { value: 'viudo', label: 'Viudo' },
+    { value: 'unionLibre', label: 'Union Libre' }
   ];
 
   const nivelesAcademicos = [
-    { label: 'Pimaria' },
-    { label: 'Bachillerato' },
-    { label: 'Universitario' },
-    { label: 'Tecnica o Tecnologia' },
-    { label: 'No tiene ningun nivel academico' }
+    { value: 'primaria', label: 'Pimaria' },
+    { value: 'bachillerato', label: 'Bachillerato' },
+    { value: 'universitario', label: 'Universitario' },
+    { value: 'tecnico', label: 'Tecnica o Tecnologia' },
+    { value: 'noTiene', label: 'No tiene ningun nivel academico' }
   ];
 
   const situacionesEOT = [
-    { label: 'Estudia' },
-    { label: 'Trabaja' },
-    { label: 'Ambas' },
-    { label: 'Ninguna' }
+    { value: 'estudia', label: 'Estudia' },
+    { value: 'trabaja', label: 'Trabaja' },
+    { value: 'ambas', label: 'Ambas' },
+    { value: 'ninguna', label: 'Ninguna' }
   ];
 
   const ingresosMensuales = [
-    { label: '0 $' },
-    { label: 'Entre 0 $ y 1000000 $' },
-    { label: 'Entre 1000000 $ y 2000000 $' },
-    { label: 'Entre 2000000 $ y 3000000 $' },
-    { label: 'Entre 3000000 $ y 4000000 $' },
-    { label: 'Entre 4000000 $ y 5000000 $' },
-    { label: '6000000 $ o mas' }
+    { value: '0', label: '0 $' },
+    { value: '0y1', label: 'Entre 0 $ y 1000000 $' },
+    { value: '1y2', label: 'Entre 1000000 $ y 2000000 $' },
+    { value: '2y3', label: 'Entre 2000000 $ y 3000000 $' },
+    { value: '3y4', label: 'Entre 3000000 $ y 4000000 $' },
+    { value: '4y5', label: 'Entre 4000000 $ y 5000000 $' },
+    { value: '6omas', label: '6000000 $ o mas' }
   ];
 
   const situacionesLaborales = [
-    { label: 'Empleado' },
-    { label: 'Trabaja en su propio negocio' },
-    { label: 'Trabaja sin paga directamente' }
+    { value: 'empleado', label: 'Empleado' },
+    { value: 'independiente', label: 'Trabaja en su propio negocio' },
+    { value: 'sinpaga', label: 'Trabaja sin paga directamente' }
   ];
 
   const horasLaborales = [
-    { label: '0 horas a la semana' },
-    { label: 'Entre 0 y 10 horas a la semana' },
-    { label: 'Entre 10 y 20 horas a la semana' },
-    { label: 'Entre 20 y 30 horas a la semana' },
-    { label: 'Entre 30 y 40 horas a la semana' },
-    { label: 'Entre 40 y 50 horas a la semana' },
-    { label: '60 horas a la semana  o mas' }
+    { value: '0', label: '0 horas a la semana' },
+    { value: '0y10', label: 'Entre 0 y 10 horas a la semana' },
+    { value: '10y20', label: 'Entre 10 y 20 horas a la semana' },
+    { value: '20y30', label: 'Entre 20 y 30 horas a la semana' },
+    { value: '30y40', label: 'Entre 30 y 40 horas a la semana' },
+    { value: '40y50', label: 'Entre 40 y 50 horas a la semana' },
+    { value: '60omas', label: '60 horas a la semana  o mas' }
   ];
 
 class Survey extends Component {
@@ -185,20 +185,20 @@ class Survey extends Component {
             problemasManejarObjetos: false,
             problemasVision: false,
             noProblemas: false,
-            genero: null,
-            dia: null,
-            mes: null,
-            direccion: null,
-            ciudad: null,
-            pais: null,
-            etnia: null,
-            religion: null,
-            estadoCivil: null,
-            nivelAcademico: null,
-            situacionEOT: null,
-            ingresosMensual: null,
-            situacionLaboral: null,
-            horasLaboral: null
+            genero: '',
+            dia: '',
+            mes: '',
+            direccion: '',
+            ciudad: '',
+            pais: '',
+            etnia: '',
+            religion: '',
+            estadoCivil: '',
+            nivelAcademico: '',
+            situacionEOT: '',
+            ingresosMensual: '',
+            situacionLaboral: '',
+            horasLaboral: ''
         }
       }
       handleSubmit = (event) => {
@@ -288,85 +288,85 @@ class Survey extends Component {
       }
       
       handleChange = (genero) => {
-        this.setState({ genero });
+        this.setState({ genero: genero.label });
         console.log(`genero:`, genero);
       }
 
       handleChangeDia = (dia) => {
-        this.setState({ dia });
+        this.setState({ dia: dia.label });
         console.log(`dia:`, dia);
       }
       
       handleChangeMes = (mes) => {
-        this.setState({ mes });
+        this.setState({ mes: mes.label });
         console.log(`mes:`, mes);
       }
 
       handleChangeCiudad = (ciudad) => {
-        this.setState({ ciudad });
+        this.setState({ ciudad: ciudad.label });
         console.log(`ingresos mensuales:`, ciudad);
       }
 
       handleChangeDireccion = (direccion) => {
-        this.setState({ direccion });
+        this.setState({ direccion: direccion.label });
         console.log(`direccion:`, direccion);
       }
 
       handleChangePais = (pais) => {
-        this.setState({ pais });
+        this.setState({ pais: pais.label });
         console.log(`pais:`, pais);
       }
 
       handleChangeEtnia = (etnia) => {
-        this.setState({ etnia });
+        this.setState({ etnia: etnia.label });
         console.log(`etnia:`, etnia);
       }
 
       handleChangeReligion = (religion) => {
-        this.setState({ religion });
+        this.setState({ religion: religion.label });
         console.log(`religion:`, religion);
       }
 
       handleChangeEstadoCivil = (estadoCivil) => {
-        this.setState({ estadoCivil });
+        this.setState({ estadoCivil: estadoCivil.label });
         console.log(`estado civil:`, estadoCivil);
       }
 
       handleChangeNivelAcademico = (nivelAcademico) => {
-        this.setState({ nivelAcademico });
+        this.setState({ nivelAcademico: nivelAcademico.label });
         console.log(`nivel academico:`, nivelAcademico);
       }
 
       handleChangeSituacionEOT = (situacionEOT) => {
-        this.setState({ situacionEOT });
+        this.setState({ situacionEOT: situacionEOT.label });
         console.log(`sitaucion EOT:`, situacionEOT);
       }
 
       handleChangeIngresosMensual = (ingresosMensual) => {
-        this.setState({ ingresosMensual });
+        this.setState({ ingresosMensual: ingresosMensual.label });
         console.log(`ingresos mensuales:`, ingresosMensual);
       }
 
       handleChangeSituacionLaboral = (situacionLaboral) => {
-        this.setState({ situacionLaboral });
+        this.setState({ situacionLaboral: situacionLaboral.label });
         console.log(`ingresos mensuales:`, situacionLaboral);
       }
 
       handleChangeHorasLaboral = (horasLaboral) => {
-        this.setState({ horasLaboral });
+        this.setState({ horasLaboral: horasLaboral.label });
         console.log(`ingresos mensuales:`, horasLaboral);
       }
       
     render(){
-        const { genero } = this.state;
-        const { dia } = this.state;
-        const { mes } = this.state;
-        const { direccion } = this.state;
-        const { ciudad } = this.state;
+        const { genero } = this.state.genero;
+        const { dia } = this.state.dia;
+        const { mes } = this.state.mes;
+        const { direccion } = this.state.direccion;
+        const { ciudad } = this.state.ciudad;
         const { label } = this.props;
         const { hasAgreed } = this.state;
-        const { pais } = this.state;
-        const { etnia } = this.state;
+        const { pais } = this.state.pais;
+        const { etnia } = this.state.etnia;
         const { problemasAprendizaje } = this.state;
         const { problemasCaminar } = this.state;
         const { problemasComunicacion } = this.state;
@@ -374,13 +374,13 @@ class Survey extends Component {
         const { problemasManejarObjetos } = this.state;
         const { problemasVision } = this.state;
         const { noProblemas } = this.state;
-        const { religion } = this.state;
-        const { estadoCivil } = this.state;
-        const { nivelAcademico } = this.state;
-        const { situacionEOT } = this.state;
-        const { ingresosMensual } = this.state;
-        const { situacionLaboral } = this.state;
-        const { horasLaboral } = this.state;
+        const { religion } = this.state.religion;
+        const { estadoCivil } = this.state.estadoCivil;
+        const { nivelAcademico } = this.state.nivelAcademico;
+        const { situacionEOT } = this.state.situacionEOT;
+        const { ingresosMensual } = this.state.ingresosMensual;
+        const { situacionLaboral } = this.state.situacionLaboral;
+        const { horasLaboral } = this.state.horasLaboral;
         
         return(
             <div className="Survey">
@@ -403,7 +403,7 @@ class Survey extends Component {
                             <div className="Survey__FormField">
                                 <label className="Survey__FormField__Label" htmlFor="name"> 2. Indique el genero con el que se identifique </label>
                                 <Select className="Survey__FormField__Dropdown"
-                                    styles={{menuList: (base) => ({ ...base, color: 'black' })}}
+                                    styles={{menu: (base) => ({ ...base, color: 'black' })}}
                                     value={genero}
                                     onChange={this.handleChange}
                                     options={generos}
