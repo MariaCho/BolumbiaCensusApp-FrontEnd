@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Select from 'react-select';
+import axios from 'axios';
 import './Survey.css';
 
 const generos = [
@@ -205,7 +206,22 @@ class Survey extends Component {
         event.preventDefault()
         const data = this.state
         console.log("dato final", data)
-
+         /*fetch("https://census-node.herokuapp.com/api/forms",
+            {
+                //mode: "no-cors",
+                method: "POST",
+                headers:{
+                    "Content_Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            }).then(res => console.log(res)) */
+            axios.post(`https://census-node.herokuapp.com/api/forms`, 
+                { data })
+            .then(res => {
+              console.log(res);
+              console.log(res.data);
+            }) 
+            
       }
 
       toggleCheckboxChange = () => {
