@@ -402,7 +402,8 @@ class Survey extends Component {
             <div className="Survey">
                 <div className="Survey__Aside"> </div>
                 <div className="Survey__Form">
-                    <div className="Survey__FormTitle">Encuesta censo de Bolumbia, permitase responder las siguientes preguntas a conciencia</div>
+                    <div className="Survey__FormTitle">Encuesta censo de Bolumbia</div>
+                    <div className="Survey__FormTitle1">Permitase responder las siguientes preguntas a conciencia:</div>
                     <div></div>
                     <div className="Survey__FormCenter">
                         <form className="Survey__FormFields" onSubmit={this.handleSubmit}>
@@ -663,7 +664,7 @@ class Survey extends Component {
                                             options={horasLaborales}
                                         />
                             </div>
-                            <div className="Survey__FormTitle">Recuerde revisar sus respuestas antes de enviar la encuesta, muchas gracias!!!!</div>
+                            <div className="Survey__FormTitle1">Recuerde revisar sus respuestas antes de enviar la encuesta.</div>
                             <div className="Survey__FormField">
                                 <button className="Survey__FormField__Button" onClick={this.handleSubmit}>Enviar</button>
                             </div>
