@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import Select from 'react-select';
 import axios from 'axios';
 import './Survey.css';
+import Auth from './Auth/Auth';
+
+const auth = new Auth();
 
 const generos = [
     { value: 'masculino', label: 'Masculino' },
@@ -372,6 +375,10 @@ class Survey extends Component {
         this.setState({ horasLaboral: horasLaboral.label });
         console.log(`ingresos mensuales:`, horasLaboral);
       }
+
+      login = () => {
+        auth.login();
+      }
       
     render(){
         const { genero } = this.state.genero;
@@ -397,6 +404,10 @@ class Survey extends Component {
         const { ingresosMensual } = this.state.ingresosMensual;
         const { situacionLaboral } = this.state.situacionLaboral;
         const { horasLaboral } = this.state.horasLaboral;
+        const isAuthenticated = auth.isAuthenticated;
+        console.log(isAuthenticated());
+
+        if(isAuthenticated()){
         
         return(
             <div className="Survey">
@@ -673,6 +684,15 @@ class Survey extends Component {
                 </div>
             </div>
         );
+    }else{
+    return(<div className="Survey">
+                <div className="Survey__Aside"> </div>
+                <div className="Survey__Form">
+                    <div className="Survey__FormTitle">Por favor ingrese primero</div>
+                    <button className="Survey__FormField__Button" onClick={this.login}>Ingresar</button>
+                    </div>
+                    </div>);
+  }
     }
     
 }
