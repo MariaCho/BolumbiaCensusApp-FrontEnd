@@ -3,6 +3,7 @@ import Select from 'react-select';
 import axios from 'axios';
 import './Survey.css';
 import Auth from './Auth/Auth';
+import Simplert from 'react-simplert';
 
 const auth = new Auth();
 
@@ -202,27 +203,21 @@ class Survey extends Component {
             situacionEOT: '',
             ingresosMensual: '',
             situacionLaboral: '',
-            horasLaboral: ''
+            horasLaboral: '',
+            showAlert:false,
+            id:'',
         }
       }
       handleSubmit = (event) => {
         event.preventDefault()
         const data = this.state
         console.log("dato final", data)
-         /*fetch("https://census-node.herokuapp.com/api/forms",
-            {
-                //mode: "no-cors",
-                method: "POST",
-                headers:{
-                    "Content_Type": "application/json"
-                },
-                body: JSON.stringify(data)
-            }).then(res => console.log(res)) */
             axios.post(`https://census-node.herokuapp.com/api/forms`, 
                 { data })
             .then(res => {
               console.log(res);
-              console.log(res.data);
+              console.log(res.data.id);
+              this.setState({id: res.data.id, showAlert:true});
             }) 
             
       }
@@ -379,8 +374,21 @@ class Survey extends Component {
       login = () => {
         auth.login();
       }
+
+      showAlert = () => {
+        this.setState({
+          showAlert: true
+        });
+      };
+     
+      hideAlert = () => {
+        this.setState({
+          showAlert: false
+        });
+      };
       
     render(){
+        const {showAlert} = this.state;
         const { genero } = this.state.genero;
         const { dia } = this.state.dia;
         const { mes } = this.state.mes;
@@ -678,6 +686,12 @@ class Survey extends Component {
                             <div className="Survey__FormTitle1">Recuerde revisar sus respuestas antes de enviar la encuesta.</div>
                             <div className="Survey__FormField">
                                 <button className="Survey__FormField__Button" onClick={this.handleSubmit}>Enviar</button>
+                                <Simplert 
+    showSimplert={ this.state.showAlert }
+    type={ 'success' }
+    title={ 'Este es tu código de formulario' }
+    message={ this.state.id }
+/>
                             </div>
                         </form>
                     </div>
