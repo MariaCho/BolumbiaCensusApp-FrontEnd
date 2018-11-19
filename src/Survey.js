@@ -210,15 +210,30 @@ class Survey extends Component {
       }
       handleSubmit = (event) => {
         event.preventDefault()
-        const data = this.state
-        console.log("dato final", data)
+        /*console.log("dato final", data)
             axios.post(`https://census-node.herokuapp.com/api/forms`, 
                 { data })
             .then(res => {
               console.log(res);
               console.log(res.data.id);
               this.setState({id: res.data.id, showAlert:true});
-            }) 
+            }) */
+
+      const data = JSON.stringify(this.state);
+            (async () => {
+                const rawResponse = await fetch('https://census-node.herokuapp.com/api/forms', {
+                  method: 'POST',
+                  headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                  },
+                  body: data
+                });
+                const content = await rawResponse.json();
+                this.setState({id: content.id, showAlert:true})
+              
+                console.log(content);
+              })();
             
       }
 
